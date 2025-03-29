@@ -1,6 +1,6 @@
-import styles from './Product.module.css';
+import styles from './Item.module.css';
 
-export const Product = ({ title, category, price, image, rating }) => {
+export const Item = ({ title, category, price, image, rating }) => {
     return (
         <div className={styles.item}>
             <div className={styles.imgContainer}>
