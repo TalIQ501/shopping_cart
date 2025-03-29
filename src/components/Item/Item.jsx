@@ -6,9 +6,10 @@ export const Item = ({ title, category, price, image, rating }) => {
             <div className={styles.imgContainer}>
                 <img src={image} alt="" />
             </div>
-            <div className={title}></div>
-            <div className={category}></div>
-            <div className={price}></div>
+            <div className={styles.title}>{title}</div>
+            <div className={styles.category}>{category}</div>
+            <div className={styles.price}>{price}</div>
+            <div className={styles.rating}>{rating}</div>
         </div>
     );
 }

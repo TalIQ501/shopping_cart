@@ -4,6 +4,7 @@ import { Outlet } from "react-router-dom";
 import { Navbar } from "./components/Navbar/Navbar";
 import { ShoppingCart } from "./components/ShoppingCart/ShoopingCart";
 import { useProducts } from "./hooks/useProductsApi";
+import { ProductsContext } from "./contexts/ProductContext";
 
 function App() {
   const { products, fetchError } = useProducts();
@@ -12,9 +13,11 @@ function App() {
 
   return (
     <>
-      {/* <ShoppingCart /> */}
       <Navbar />
-      <Outlet products={products} />
+      <ProductsContext.Provider value={products}>
+      {/* <ShoppingCart /> */}
+        <Outlet />
+      </ProductsContext.Provider>
     </>
   )
 }
