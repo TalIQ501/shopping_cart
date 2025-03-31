@@ -5,6 +5,7 @@ import { ItemGrid } from "../../components/ItemGrid/ItemGrid.jsx";
 import { Item } from "../../components/Item/Item.jsx";
 import { getRandom } from "../../utils/getRandom.js";
 import { ProductsContext } from "../../contexts/ProductsContext.jsx";
+import { ImageSlider } from "../../components/ImageSlider/ImageSlider.jsx";
 
 export const HomePage = () => {
   const { products } = useContext(ProductsContext);
@@ -21,7 +22,7 @@ export const HomePage = () => {
 
       do {
         num = getRandom(0, len - 1)
-      } while (newList.some(entry => entry.id === products[num  ].id))
+      } while (newList.some(entry => entry.id === products[num].id))
 
       newList.push(products[num]);
     }
@@ -31,8 +32,8 @@ export const HomePage = () => {
 
   return (
     <section>
-      <div className={styles.flexVertical}>
-        <h1>Welcome to the Online Store</h1>
+      <div className={styles.pageHead}>
+        <h2>Welcome to the Online Store</h2>
         <p>Get your favourite items at your doorstep!</p>
       </div>
       <ItemGrid>

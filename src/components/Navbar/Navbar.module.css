@@ -4,6 +4,12 @@
     align-items: center;
     justify-content: space-between;
     padding: 10px;
+    background-color: var(--primary-red);
+    color: #fff;
+}
+
+.logoDiv h2 {
+    font-size: 2rem;
 }
 
 nav ul {
@@ -14,7 +20,13 @@ nav ul {
     gap: 10px;
 }
 
+nav ul li {
+    font-size: 1.15rem;
+    font-weight: 500;
+}
+
 .imgContainer {
     width: 1.5em;
     height: 1.5em;
 }
+

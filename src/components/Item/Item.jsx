@@ -14,7 +14,7 @@ export const Item = ({ id, title, price, image, rating }) => {
           <div className={styles.price}>${price}</div>
           <div className={styles.rating}>{rating}⭐</div>
         </div>
-        //<BtnAddToCart key={id} id={id} />
+        <BtnAddToCart key={id} id={id} />
       </div>
     </Link>
   );

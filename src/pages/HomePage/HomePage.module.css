@@ -1,4 +1,10 @@
-.flexVertical {
+.pageHead {
     display: flex;
     flex-direction: column;
+    text-align: center;
+    margin: 10px 0;
+}
+
+.pageHead h2 {
+    color: var(--primary-red);
 }

@@ -1,14 +1,19 @@
 import { useContext } from "react";
-import { ItemGrid } from "../../components/ItemGrid/ItemGrid";
 import { ProductsContext } from "../../contexts/ProductsContext";
+
+import { ItemGrid } from "../../components/ItemGrid/ItemGrid";
 import { Item } from "../../components/Item/Item";
+
+import styles from './StorePage.module.css'
 
 export const StorePage = () => {
   const { products } = useContext(ProductsContext);
 
   return (
     <section>
-      <h2>Store</h2>
+      <div className={styles.pageHead}>
+        <h2>Store</h2>
+      </div>
       <ItemGrid>
         {products.map((product) => {
           return (
