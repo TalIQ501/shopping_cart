@@ -1,8 +1,10 @@
 import { useContext } from "react";
 import { CartContext } from "../../contexts/CartContext";
 
+import styles from './BtnAddToCart.module.css'
+
 export const BtnAddToCart = ({ id }) => {
-  const { cart, setCart } = useContext(CartContext);
+  const { setCart } = useContext(CartContext);
 
   const addToCart = () => {
     setCart((prevCart) => {
@@ -21,5 +23,5 @@ export const BtnAddToCart = ({ id }) => {
     });
   };
 
-  return <button onClick={() => addToCart()}>Add to Cart</button>;
+  return <button className={styles.btn} onClick={() => addToCart()}>Add to Cart</button>;
 };
