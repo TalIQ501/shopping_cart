@@ -16,3 +16,16 @@ img {
 section {
     padding: 10px;
 }
+
+.no-link {
+    text-decoration: none;
+    color: inherit;
+}
+
+.no-link:hover,
+.no-link:focus,
+.no-link:visited
+{
+    text-decoration: none;
+    color: inherit;
+}

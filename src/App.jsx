@@ -1,23 +1,23 @@
-import { useState } from "react";
-import { Outlet } from "react-router-dom";
+import { CartProvider } from "./contexts/CartContext.jsx";
+import { ProductsContext, ProductsProvider } from "./contexts/ProductsContext.jsx"
 
+import { Outlet } from "react-router-dom";
 import { Navbar } from "./components/Navbar/Navbar";
-import { ShoppingCart } from "./components/ShoppingCart/ShoopingCart";
-import { useProducts } from "./hooks/useProductsApi";
-import { ProductsContext } from "./contexts/ProductContext";
+import { useContext } from "react";
 
 function App() {
-  const { products, fetchError } = useProducts();
+  const { fetchError } = useContext(ProductsContext);
 
-  if (fetchError) return (<h2>Error fetching data</h2>);
+  if (fetchError) return <h2>Failed to fetch data</h2>
 
   return (
     <>
       <Navbar />
-      <ProductsContext.Provider value={products}>
-      {/* <ShoppingCart /> */}
-        <Outlet />
-      </ProductsContext.Provider>
+      <ProductsProvider>
+        <CartProvider>
+          <Outlet />
+        </CartProvider>
+      </ProductsProvider>
     </>
   )
 }
