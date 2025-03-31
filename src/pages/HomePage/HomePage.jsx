@@ -17,7 +17,11 @@ export const HomePage = () => {
     const GRID_LENGTH = 4;
 
     for (let i = 0; i < GRID_LENGTH; i++) {
-      const num = getRandom(0, len - 1);
+      let num;
+
+      do {
+        num = getRandom(0, len - 1)
+      } while (newList.some(entry => entry.id === products[num  ].id))
 
       newList.push(products[num]);
     }

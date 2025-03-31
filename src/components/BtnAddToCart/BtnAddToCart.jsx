@@ -1,9 +1,8 @@
 import { useContext } from "react";
 import { CartContext } from "../../contexts/CartContext";
 
-export const BtnAddToCart = ({ product }) => {
+export const BtnAddToCart = ({ id }) => {
   const { cart, setCart } = useContext(CartContext);
-  const { id } = product;
 
   const addToCart = () => {
     setCart((prevCart) => {
