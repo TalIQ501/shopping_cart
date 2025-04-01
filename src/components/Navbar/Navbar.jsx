@@ -8,7 +8,7 @@ export const Navbar = () => {
   return (
     <header className={styles.navbar}>
       <div className={styles.logoDiv}>
-        <h1>Online Store</h1>
+        <h1>Shop Online!</h1>
       </div>
       <Nav />
     </header>
