@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 
 import styles from "./Navbar.module.css";
 
-import cartLogo from "../../assets/shopping-cart-outline-svgrepo-com.svg";
+import cartLogo from "../../assets/shopping-cart-svgrepo-com.svg";
 
 export const Navbar = () => {
   return (
@@ -30,9 +30,11 @@ const Nav = () => {
           </Link>
         </li>
         <li>
-          <div className={`${styles.imgContainer} ${styles.logo}`}>
-            <img src={cartLogo} alt="" />
-          </div>
+          <Link to={"/cart"} className={`no-link`}>
+            <div className={`${styles.imgContainer} ${styles.logo}`}>
+              <img src={cartLogo} alt="cart" />
+            </div>
+          </Link>
         </li>
       </ul>
     </nav>
