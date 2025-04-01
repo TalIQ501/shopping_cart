@@ -1,4 +1,4 @@
-import styles from './ProductGrid.module.css'
+import styles from './ItemGrid.module.css'
 
 export const ItemGrid = ({ children }) => {
     return (
