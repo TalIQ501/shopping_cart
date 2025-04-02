@@ -1,0 +1,32 @@
+.product {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+.imgContainer {
+    height: 200px;
+}
+
+.detailsGrid {
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    border: 0.1px solid #ddd;
+    width: fit-content;
+    text-align: center;
+}
+
+.detailsGrid div {
+    border: 0.1px solid #f3f3f3;
+    padding: 5px;
+}
+
+.detailLabel {
+    font-weight: 500;
+}
+
+.detail {
+
+}
