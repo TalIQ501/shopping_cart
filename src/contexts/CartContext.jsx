@@ -19,12 +19,12 @@ export const CartProvider = ({ children }) => {
             cart.forEach(cartItem => {
                 const item = products.find(product => product.id === cartItem.objectId);
                 if (!item) return
-                newTotal += cartItem.qty * item.price;
+                newTotal += cartItem.qty * item.price.toFixed(2);
             })
             if (newTotal !== total) setTotal(newTotal)
         }
         getTotal()
-    }, [cart, products])
+    }, [cart, products]);
 
     return (
         <CartContext.Provider value={{ cart, setCart, total }}>

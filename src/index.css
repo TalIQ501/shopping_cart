@@ -33,3 +33,13 @@ section {
     text-decoration: none;
     color: inherit;
 }
+
+.flex-column {
+    display: flex;
+    flex-direction: column;
+}
+
+.flex-row {
+    display: flex;
+    flex-direction: row;
+}
