@@ -8,8 +8,8 @@ import { ProductsContext } from "../../contexts/ProductsContext.jsx";
 import { ImageSlider } from "../../components/ImageSlider/ImageSlider.jsx";
 
 export const HomePage = () => {
-  const { products } = useContext(ProductsContext);
-  const [displayList, setDisplayList] = useState([]);
+  const { products, loading } = useContext(ProductsContext);
+  const [ displayList, setDisplayList ] = useState([]);
 
   useEffect(() => {
     if (!products || products.length === 0) return;
@@ -30,26 +30,15 @@ export const HomePage = () => {
     setDisplayList(newList);
   }, [products]);
 
+  if (loading) return <h2>Loading...</h2>
+
   return (
     <section>
       <div className={styles.pageHead}>
         <h2>Welcome to the Online Store</h2>
         <p>Get your favourite items at your doorstep!</p>
       </div>
-      <ItemGrid>
-        {displayList.map((product) => {
-          return (
-            <Item
-              key={product.id}
-              id={product.id}
-              title={product.title}
-              price={product.price}
-              image={product.image}
-              rating={product.rating.rate}
-            />
-          );
-        })}
-      </ItemGrid>
+      <ImageSlider sliderProducts={ displayList } />
     </section>
   );
 };

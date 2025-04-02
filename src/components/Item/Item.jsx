@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import styles from "./Item.module.css";
 import { BtnAddToCart } from "../BtnAddToCart/BtnAddToCart";
 
-export const Item = ({ id, title, price, image, rating }) => {
+export const Item = ({ id, title, price, image, rating=0 }) => {
   return (
     <div className={styles.item}>
         <Link to={`/store/${id}`} className="no-link">
