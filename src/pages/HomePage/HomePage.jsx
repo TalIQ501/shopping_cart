@@ -1,8 +1,6 @@
 import { useContext, useEffect, useState } from "react";
 import styles from "./HomePage.module.css";
 
-import { ItemGrid } from "../../components/ItemGrid/ItemGrid.jsx";
-import { Item } from "../../components/Item/Item.jsx";
 import { getRandom } from "../../utils/getRandom.js";
 import { ProductsContext } from "../../contexts/ProductsContext.jsx";
 import { ImageSlider } from "../../components/ImageSlider/ImageSlider.jsx";

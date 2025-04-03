@@ -1,4 +1,4 @@
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { CartContext } from "../../contexts/CartContext";
 
 import styles from './BtnAddToCart.module.css'
@@ -6,7 +6,11 @@ import styles from './BtnAddToCart.module.css'
 export const BtnAddToCart = ({ id }) => {
   const { setCart } = useContext(CartContext);
 
+  const [ clicked, setClicked ] = useState(false);
+
   const addToCart = () => {
+    setClicked(true)
+
     setCart((prevCart) => {
       const item = prevCart.find((cartItem) => cartItem.objectId === id);
 
@@ -21,7 +25,11 @@ export const BtnAddToCart = ({ id }) => {
 
       return [...prevCart, { objectId: id, qty: 1 }];
     });
+
+    setTimeout(() => {
+      setClicked(false);
+    }, 500)
   };
 
-  return <button className={styles.btn} onClick={() => addToCart()}>Add to Cart</button>;
+  return <button className={`${styles.btn} ${clicked ? styles.btnClicked : ""}`} onClick={() => addToCart()}>Add to Cart</button>;
 };
