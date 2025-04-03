@@ -12,9 +12,9 @@ function App() {
 
   return (
     <>
-      <Navbar />
       <ProductsProvider>
         <CartProvider>
+          <Navbar />
           <Outlet />
         </CartProvider>
       </ProductsProvider>
