@@ -1,14 +1,13 @@
 import { useParams } from "react-router-dom";
 
 import styles from "./ProductPage.module.css";
-import { ProductsContext } from "../../contexts/ProductsContext.jsx";
-import { useContext } from "react";
+import { useProductsContext } from "../../contexts/ProductsContext.jsx";
 import { BtnAddToCart } from "../../components/BtnAddToCart/BtnAddToCart.jsx"
 
 export const ProductPage = () => {
   const { id } = useParams();
 
-  const { products, loading } = useContext(ProductsContext);
+  const { products, loading } = useProductsContext();
 
   const product = products.find((p) => p.id === Number(id));
 

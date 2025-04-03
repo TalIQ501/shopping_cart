@@ -1,5 +1,4 @@
-import { useContext } from "react";
-import { ProductsContext } from "../../contexts/ProductsContext";
+import { useProductsContext } from "../../contexts/ProductsContext";
 
 import { ItemGrid } from "../../components/ItemGrid/ItemGrid";
 import { Item } from "../../components/Item/Item";
@@ -7,7 +6,7 @@ import { Item } from "../../components/Item/Item";
 import styles from './StorePage.module.css'
 
 export const StorePage = () => {
-  const { products } = useContext(ProductsContext);
+  const { products } = useProductsContext();
 
   return (
     <section>

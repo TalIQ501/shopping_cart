@@ -1,17 +1,17 @@
-import { useContext, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import styles from "./ImageSlider.module.css";
 
 import { Item } from "../Item/Item.jsx";
-import { ProductsContext } from "../../contexts/ProductsContext.jsx";
+import { useProductsContext } from "../../contexts/ProductsContext.jsx";
 
 import leftArrow from "../../assets/left-arrow-svgrepo-com.svg";
 import rightArrow from "../../assets/right-arrow-svgrepo-com.svg";
 
 export const ImageSlider = ({ sliderProducts }) => {
   const len = sliderProducts.length;
-  const { loading } = useContext(ProductsContext);
-  const [currentSlide, setCurrentSlide] = useState(0);
-  const [currentData, setCurrentData] = useState({});
+  const { loading } = useProductsContext();
+  const [ currentSlide, setCurrentSlide ] = useState(0);
+  const [ currentData, setCurrentData ] = useState({});
 
   const nextSlide = () => {
     setCurrentSlide((index) => {

@@ -1,10 +1,10 @@
-import { useContext, useState } from "react";
-import { CartContext } from "../../contexts/CartContext";
+import { useState } from "react";
+import { useCartContext } from "../../contexts/CartContext";
 
 import styles from './BtnAddToCart.module.css'
 
 export const BtnAddToCart = ({ id }) => {
-  const { setCart } = useContext(CartContext);
+  const { setCart } = useCartContext();
 
   const [ clicked, setClicked ] = useState(false);
 

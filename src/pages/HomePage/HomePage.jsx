@@ -1,12 +1,12 @@
-import { useContext, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import styles from "./HomePage.module.css";
 
 import { getRandom } from "../../utils/getRandom.js";
-import { ProductsContext } from "../../contexts/ProductsContext.jsx";
+import { useProductsContext } from "../../contexts/ProductsContext.jsx";
 import { ImageSlider } from "../../components/ImageSlider/ImageSlider.jsx";
 
 export const HomePage = () => {
-  const { products, loading } = useContext(ProductsContext);
+  const { products, loading } = useProductsContext();
   const [ displayList, setDisplayList ] = useState([]);
 
   useEffect(() => {

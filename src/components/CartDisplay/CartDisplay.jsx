@@ -1,6 +1,6 @@
-import { useContext, useEffect } from "react";
-import { CartContext } from "../../contexts/CartContext.jsx";
-import { ProductsContext } from "../../contexts/ProductsContext.jsx";
+import { useEffect } from "react";
+import { useCartContext } from "../../contexts/CartContext.jsx";
+import { useProductsContext } from "../../contexts/ProductsContext.jsx";
 
 import styles from "./CartDisplay.module.css";
 
@@ -8,8 +8,8 @@ import picBtnAdd from '../../assets/plus-svgrepo-com.svg'
 import picBtnMinus from '../../assets/minus-svgrepo-com.svg'
 
 export const CartDisplay = () => {
-  const { cart, setCart, total } = useContext(CartContext);
-  const { products } = useContext(ProductsContext);
+  const { cart, setCart, total } = useCartContext();
+  const { products } = useProductsContext();
 
   const increaseQty = ({ id }) => {
     setCart(prevCart =>
@@ -73,22 +73,8 @@ export const CartDisplay = () => {
               <div className={styles.totalPrice}>${(cartItem.qty * product.price).toFixed(2)}</div>
             </div>
           </div>
-          // <CartProductDisplay
-          //   key={product.id}
-          //   id={product.id}
-          //   title={product.title}
-          //   price={product.price}
-          //   image={product.image}
-          //   qty={cartItem.qty}
-          // />
         );
       })}
     </section>
   );
 };
-
-// const CartProductDisplay = ({ title, price, image, qty }) => {
-//   return (
-    
-//   );
-// };

@@ -3,15 +3,18 @@ import { ProductsContext } from "./ProductsContext";
 
 export const CartContext = createContext({
     products: [],
-    fetchError: null
+    fetchError: null,
+    total: false
 });
 
 export const CartProvider = ({ children }) => {
     const { products } = useContext(ProductsContext);
 
-    const [cart, setCart] = useState([]);
+    const [ cart, setCart ] = useState([]);
 
-    const [total, setTotal] = useState(0);
+    const [ total, setTotal ] = useState(0);
+
+    const [ isOpen, setIsOpen ] = useState(false);
 
     useEffect(() => {
         const getTotal = () => {
@@ -27,7 +30,7 @@ export const CartProvider = ({ children }) => {
     }, [cart, products]);
 
     return (
-        <CartContext.Provider value={{ cart, setCart, total }}>
+        <CartContext.Provider value={{ cart, setCart, total, isOpen, setIsOpen }}>
             {children}
         </CartContext.Provider>
     )
