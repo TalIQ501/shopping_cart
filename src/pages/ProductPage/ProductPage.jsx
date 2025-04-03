@@ -14,7 +14,7 @@ export const ProductPage = () => {
 
   if (loading) return <h2>Loading...</h2>
 
-  if (!product) return <h2>Product not found</h2>;
+  if (!product) return <h2>Product not found</h2>
 
   return (
     <section className={styles.product}>
