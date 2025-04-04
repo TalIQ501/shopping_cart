@@ -23,6 +23,14 @@
     transition: 0.2s ease-in-out;
 }
 
+.total {
+    font-weight: 500;
+}
+
+.total span {
+    color: var(--primary-red);
+}
+
 .itemContainer {
     justify-content: center;
     overflow-y: auto;

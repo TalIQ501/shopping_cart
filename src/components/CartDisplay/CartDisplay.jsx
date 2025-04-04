@@ -48,7 +48,7 @@ export const CartDisplay = () => {
   return (
     <div className={styles.dialog}>
       <div className={`flex-column ${styles.cart}`}>
-        <div className={styles.total}>Total: ${total.toFixed(2)}</div>
+        <div className={styles.total}>Total: <span>${total.toFixed(2)}</span></div>
         <div className={`${styles.itemContainer}`}>
           {cart.map((cartItem) => {
             const product = products.find((p) => p.id === cartItem.objectId);
