@@ -1,25 +1,34 @@
 import { CartProvider } from "./contexts/CartContext.jsx";
-import { ProductsContext, ProductsProvider } from "./contexts/ProductsContext.jsx"
+import { ProductsProvider, useProductsContext } from "./contexts/ProductsContext.jsx"
 
 import { Outlet } from "react-router-dom";
 import { Navbar } from "./components/Navbar/Navbar";
-import { useContext } from "react";
+import { CartDisplay } from "./components/CartDisplay/CartDisplay.jsx";
 
 function App() {
-  const { fetchError } = useContext(ProductsContext);
+  return (
+    <>
+      <ProductsProvider>
+        <CartProvider>
+          <Content />
+        </CartProvider>
+      </ProductsProvider>
+    </>
+  )
+}
+
+const Content = () => {
+  const { fetchError } = useProductsContext();
 
   if (fetchError) return <h2>Failed to fetch data</h2>
 
   return (
     <>
-      <ProductsProvider>
-        <CartProvider>
-          <Navbar />
-          <Outlet />
-        </CartProvider>
-      </ProductsProvider>
+      <Navbar />
+      <CartDisplay />
+      <Outlet />
     </>
-  )
+  );
 }
 
 export default App

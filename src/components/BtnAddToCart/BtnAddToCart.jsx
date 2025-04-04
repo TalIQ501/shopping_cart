@@ -31,5 +31,5 @@ export const BtnAddToCart = ({ id }) => {
     }, 500)
   };
 
-  return <button className={`${styles.btn} ${clicked ? styles.btnClicked : ""}`} onClick={() => addToCart()}>Add to Cart</button>;
+  return <button className={`btn-primary ${styles.btn} ${clicked ? styles.btnClicked : ""}`} onClick={() => addToCart()}>Add to Cart</button>;
 };

@@ -1,13 +1,46 @@
+.dialog {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(5px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.cart {
+    align-items: center;
+    justify-content: center;
+    background-color: #eee;
+    height: 70vh;
+    width: 70vw;
+    gap: 10px;
+    overflow: hidden;
+    padding: 10px;
+    transition: 0.2s ease-in-out;
+}
+
+.itemContainer {
+    justify-content: center;
+    overflow-y: auto;
+}
+
 .cartItem {
     display: flex;
     flex-direction: column;
-    width: fit-content;
+    justify-content: center;
+    align-items: center;
+    width: 75%;
     border: 0.1px #ddd solid;
+    background-color: #fff;
     padding: 10px;
 }
 
 .imgContainer {
-    width: 200px;
+    height: 150px;
 }
 
 .btnContainer {

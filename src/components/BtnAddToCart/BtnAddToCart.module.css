@@ -1,9 +1,5 @@
 .btn {
-    border: none;
     padding: 5px;
-    background: var(--primary-red);
-    color: #fff;
-    font-weight: 500;
     font-size: 1.1rem;
     transition: 0.2s ease-in-out;
 }
