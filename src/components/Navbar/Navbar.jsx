@@ -8,8 +8,6 @@ import { useCartContext } from "../../contexts/CartContext";
 export const Navbar = () => {
   const { isOpen, setIsOpen } = useCartContext();
 
-  console.log(isOpen);
-
   return (
     <header className={styles.navbar}>
       <div className={styles.logoDiv}>
